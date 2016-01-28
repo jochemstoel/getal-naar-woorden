@@ -25,7 +25,7 @@ NumberParser.parseNumber(7564928); // zeven miljoen vijfhonderdvierenzestigduize
 ### Webpagina Voorbeeld
 NumberParser insluiten in de head van je webpagina om het te kunnen gebruiken.
 ```html
-<script type="application/javascript" src="NumberParser.js"></script>
+<script type="application/javascript" src="NumberParser.Node.js"></script>
 <script type="application/javascript">
 	NumberParser.parseNumber(7564928); // zeven miljoen vijfhonderdvierenzestigduizend negenhonderdachtentwintig
 </script>
@@ -34,7 +34,7 @@ NumberParser insluiten in de head van je webpagina om het te kunnen gebruiken.
 ### Node.js / NPM require
 Ik heb helemaal niets beters te doen en daarom is NumberParser ook als Node module inbegrepen. Het bestand NumberParser.Node.js is identiek aan NumberParser.js met als enige verschil dat het object toegewezen is aan module.exports zodat het kan worden ge-required.
 ```javascript
-var NumberParser = require('NumberParser');
+var NumberParser = require('./NumberParser.Node');
 NumberParser.parseNumber(7564928); // zeven miljoen vijfhonderdvierenzestigduizend negenhonderdachtentwintig
 ```
 
