@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Getal naar woorden (NumberParser) by jochemstoel</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Getal naar woorden (NumberParser)</h1>
+        <p>Vertaal een getal naar de linguïstische expressie. (18527 naar &#39;achttienduizend vijfhonderdzevenentwintig&#39;)</p>
+
+        <p class="view"><a href="https://github.com/jochemstoel/getal-naar-woorden">View the Project on GitHub <small>jochemstoel/getal-naar-woorden</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/jochemstoel/getal-naar-woorden/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/jochemstoel/getal-naar-woorden/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/jochemstoel/getal-naar-woorden">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="numberparser" class="anchor" href="#numberparser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NumberParser</h1>
+
+<p>Ik zoek 'even snel' met Google naar een PHP functie die een getal converteert naar woorden. Ik vind voornamelijk topics waarin mensen vragen hoe dat moet. In enkele gevallen zit daar een stukje brakke code bij die voor de helft werkt. De oplossingen die mensen geven zijn treurig. Het feit dat deze functie niet even zo makkelijk te vinden is op het internet is een ernstig probleem in de wereld dat ik absoluut niet aan kan zien en ik voel de morele verplichting om een oplossing te bieden. Voor de zoveelste keer betekent 'even snel' iets opzoeken dat ik mijn kostbare tijd opoffer aan de maatschappij.</p>
+
+<p>De PHP class in deze repository is eigenlijk de NumberParser Service class op <a href="https://github.com/TijdschriftVoorGeneeskunde/TijdschriftVoorGeneeskunde/blob/fbc745993d36d483ffa1dd1c35524b11012349f2/src/AppBundle/Service/NumberParser.php"></a><a href="https://github.com/TijdschriftVoorGeneeskunde/TijdschriftVoorGeneeskunde/blob/fbc745993d36d483ffa1dd1c35524b11012349f2/src/AppBundle/Service/NumberParser.php">https://github.com/TijdschriftVoorGeneeskunde/TijdschriftVoorGeneeskunde/blob/fbc745993d36d483ffa1dd1c35524b11012349f2/src/AppBundle/Service/NumberParser.php</a>, door mij aangepast om namespace/applicatie onafhankelijk te werken.</p>
+
+<p>Ik heb NumberParser herschreven in een aantal talen / vormen</p>
+
+<ul>
+<li>NumberParser PHP Class</li>
+<li>NumberParser Javascript Object</li>
+<li>NumberParser Node.js / NPM module</li>
+</ul>
+
+<h3>
+<a id="php-voorbeeld" class="anchor" href="#php-voorbeeld" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PHP Voorbeeld</h3>
+
+<p>Gebruik NumberParser in je PHP script.</p>
+
+<pre><code>include 'NumberParser.php';
+
+$numparser  = new NumberParser();
+print $numparser-&gt;parseNumber(7564928); // zeven miljoen vijfhonderdvierenzestigduizend negenhonderdachtentwintig
+</code></pre>
+
+<h3>
+<a id="javascript-voorbeeld" class="anchor" href="#javascript-voorbeeld" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Javascript Voorbeeld</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">NumberParser</span>.<span class="pl-en">parseNumber</span>(<span class="pl-c1">7564928</span>); <span class="pl-c">// zeven miljoen vijfhonderdvierenzestigduizend negenhonderdachtentwintig</span></pre></div>
+
+<h3>
+<a id="webpagina-voorbeeld" class="anchor" href="#webpagina-voorbeeld" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Webpagina Voorbeeld</h3>
+
+<p>NumberParser insluiten in de head van je webpagina om het te kunnen gebruiken.</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>application/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>NumberParser.Node.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-s1">&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>application/javascript<span class="pl-pds">"</span></span>&gt;</span>
+<span class="pl-s1">    <span class="pl-smi">NumberParser</span>.<span class="pl-en">parseNumber</span>(<span class="pl-c1">7564928</span>); <span class="pl-c">// zeven miljoen vijfhonderdvierenzestigduizend negenhonderdachtentwintig</span></span>
+<span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
+
+<h3>
+<a id="nodejs--npm-require" class="anchor" href="#nodejs--npm-require" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Node.js / NPM require</h3>
+
+<p>Ik heb helemaal niets beters te doen en daarom is NumberParser ook als Node module inbegrepen. Het bestand NumberParser.Node.js is identiek aan NumberParser.js met als enige verschil dat het object toegewezen is aan module.exports zodat het kan worden ge-required.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> NumberParser <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./NumberParser.Node<span class="pl-pds">'</span></span>);
+<span class="pl-smi">NumberParser</span>.<span class="pl-en">parseNumber</span>(<span class="pl-c1">7564928</span>); <span class="pl-c">// zeven miljoen vijfhonderdvierenzestigduizend negenhonderdachtentwintig</span></pre></div>
+
+<h2>
+<a id="opmerkingen" class="anchor" href="#opmerkingen" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Opmerkingen</h2>
+
+<p>Omdat ik overal commentaar op heb.</p>
+
+<h4>
+<a id="fmod" class="anchor" href="#fmod" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>fmod</h4>
+
+<p>Javascript heeft geen fmod functie. GitHub gebruiker wteuber schreef een Javascript equivalent van PHP fmod (inbegrepen)</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">/* https://gist.github.com/wteuber/6241786 */</span>
+<span class="pl-k">function</span> <span class="pl-en">fmod</span>(<span class="pl-smi">a</span>,<span class="pl-smi">b</span>) { <span class="pl-k">return</span> <span class="pl-c1">Number</span>((a <span class="pl-k">-</span> (<span class="pl-c1">Math</span>.<span class="pl-c1">floor</span>(a <span class="pl-k">/</span> b) <span class="pl-k">*</span> b)).<span class="pl-en">toPrecision</span>(<span class="pl-c1">8</span>)); };</pre></div>
+
+<h4>
+<a id="overig" class="anchor" href="#overig" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overig</h4>
+
+<p>Binnen ennkele tijd voeg ik nog een NumberParser toe geschreven in C# en C++ en zal ik tevens NumberParser er ook bij doen als Shared Library (.dll) voor in je .NET applicatie.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/jochemstoel">jochemstoel</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
